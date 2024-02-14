@@ -1,0 +1,439 @@
+/* Global styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #00536f;
+    --secondary-color: #8c0044;
+}
+
+/* Body */
+body {
+    background: #000000;
+    color: #eee;
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.5;
+}
+
+/* Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Typography */
+h1,
+h2 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('bg-future1.jpg');
+    background-size: cover;
+    padding: 250px 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Buttons */
+.buttons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(28, 28, 28, 0.7);
+    /* Semi-transparent black background */
+    z-index: 1000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1rem;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    /* Rounded corners */
+    padding: 10px 30px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+
+    .btn:before,
+    .btn:after {
+        display: none;
+    }
+}
+
+/* Professional Section */
+#professional {
+    background-color: #000000;
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#professional h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.resume-link {
+    display: inline-block;
+    background-color: #620000;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.resume-link:hover {
+    background-color: #0056b3;
+}
+
+.social-icons {
+    margin-top: 40px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 2.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.arial-font {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
+
+/* Resume Section */
+.resume-section {
+    padding: 50px;
+    background-color: #000000;
+    /* Dark background color */
+    color: #787878;
+    /* Light text color */
+}
+
+/* Resume Headings */
+.resume-heading {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #39b54a;
+    /* Green primary color */
+}
+
+.resume-subheading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff652f;
+    /* Orange secondary color */
+}
+
+/* Resume Entries */
+
+
+.resume-entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Add transition for smooth effect */
+}
+
+.resume-entry:hover {
+    transform: translateY(-5px);
+    /* Move the section up slightly on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* Add shadow effect on hover */
+}
+
+
+.resume-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+    font-size: 2rem;
+    color: #39b54a;
+    /* Green primary color */
+}
+
+.resume-details {
+    flex-grow: 1;
+}
+
+.resume-details p {
+    margin-bottom: 10px;
+    color: #0f0f0f;
+    /* Light text color */
+}
+
+.resume-details strong {
+    font-weight: bold;
+}
+
+.resume-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.resume-subdetails {
+    padding-left: 10px;
+    border-left: 2px solid #39b54a;
+    /* Green primary color */
+}
+
+.education-item {
+    margin-bottom: 20px;
+}
+
+.education-img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.education-info {
+    overflow: hidden;
+}
+
+.education-info p {
+    margin-bottom: 5px;
+}
+
+.skills {
+    background-color: #f9f9f9;
+    /* Light background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Add padding for spacing */
+    margin-bottom: 30px;
+    /* Add margin for spacing between sections */
+
+}
+
+.skill-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill-group {
+    display: inline-block;
+    width: 300px;
+    /* Adjust width as needed */
+    margin-right: 20px;
+    /* Add spacing between skill groups */
+    vertical-align: top;
+    /* Align skill groups to the top */
+}
+
+
+.skill-group h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    /* Dark text color */
+}
+
+.skill-group ul {
+    list-style-type: none;
+    /* Remove default list style */
+    padding: 0;
+    /* Remove default list padding */
+}
+
+.skill-group ul li {
+    margin-bottom: 5px;
+    /* Add spacing between each skill */
+    color: #666;
+    /* Medium text color */
+}
+
+.clubs {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Adjust the max-width as needed */
+}
+
+.club-group {
+    margin-bottom: 10px;
+}
+
+.club-group h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.club-group ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.club-group ul li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Individual Sections */
+.education,
+.experience,
+.skills,
+.clubs {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    /* Darker background for individual sections */
+}
+
+#about {
+
+    gap: 30px;
+}
+
+.extras-grid {
+    display: flex;
+    justify-content: center;
+    /* Center the items horizontally */
+    max-width: 1200px;
+    /* Set a maximum width for the grid */
+    margin: 0 auto;
+    /* Center the grid horizontally */
+}
+
+.photography-container {
+
+    flex: 1;
+    /* Each container takes up equal space */
+    margin: 0 15px;
+    /* Add some spacing between the containers */
+}
+
+.spotify-container {
+    flex: 0.6;
+    /* Each container takes up equal space */
+    margin: 0 5px;
+    /* Add some spacing between the containers */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
