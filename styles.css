@@ -402,6 +402,30 @@ nav a {
     /* Darker background for individual sections */
 }
 
+.experience-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    /* Adjust as needed */
+}
+
+.experience-details {
+    flex: 1;
+}
+
+.experience-date {
+    font-weight: bold;
+    text-align: right;
+    flex-shrink: 0;
+    width: 220px;
+    /* Adjust width as needed */
+}
+
+.experience-date>div {
+    margin-top: 15px;
+}
+
 #about {
 
     gap: 30px;
@@ -423,6 +447,8 @@ nav a {
     /* Each container takes up equal space */
     margin: 0 15px;
     /* Add some spacing between the containers */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .spotify-container {
@@ -430,6 +456,17 @@ nav a {
     /* Each container takes up equal space */
     margin: 0 5px;
     /* Add some spacing between the containers */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotify-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.photography-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .gallery img {
