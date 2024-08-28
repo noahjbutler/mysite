@@ -295,6 +295,66 @@
                 <img src="IMG_5754.JPG" >
                 <img src="IMG_7838.JPG">
                 <img src="IMG_7858.JPG" >
+               <img src="IMG_0086.jpg" alt="">
+                <img src="IMG_0086.jpg" alt=""> 
+                <img src="IMG_0228.jpg" alt=""> 
+                <img src="IMG_0502.jpg" alt=""> 
+                <img src="IMG_0505.jpg" alt=""> 
+                <img src="IMG_1089.jpg" alt=""> 
+                <img src="IMG_1460.jpg" alt=""> 
+                <img src="IMG_1683.jpg" alt=""> 
+                <img src="IMG_1690.jpg" alt=""> 
+                <img src="IMG_1695.jpg" alt=""> 
+                <img src="IMG_1745.jpg" alt=""> 
+                <img src="IMG_1795.jpg" alt=""> 
+                <img src="IMG_1878_3.jpg" alt=""> 
+                <img src="IMG_1919.jpg" alt=""> 
+                <img src="IMG_2004.jpg" alt=""> 
+                <img src="IMG_2064.jpg" alt=""> 
+                <img src="IMG_2065.jpg" alt=""> 
+                <img src="IMG_2124.jpg" alt=""> 
+                <img src="IMG_2178.jpg" alt=""> 
+                <img src="IMG_2224.jpg" alt=""> 
+                <img src="IMG_2302.jpg" alt=""> 
+                <img src="IMG_2344.jpg" alt=""> 
+                <img src="IMG_2354.jpg" alt=""> 
+                <img src="IMG_2365.jpg" alt=""> 
+                <img src="IMG_2380_2.jpg" alt=""> 
+                <img src="IMG_2415.jpg" alt=""> 
+                <img src="IMG_2428.jpg" alt=""> 
+                <img src="IMG_2431.jpg" alt=""> 
+                <img src="IMG_2436.jpg" alt=""> 
+                <img src="IMG_2437.jpg" alt=""> 
+                <img src="IMG_2512.jpg " alt="">
+                <img src="IMG_2588.jpg " alt="">
+                <img src="IMG_2634.jpg " alt="">
+                <img src="IMG_2656.jpg " alt="">
+                <img src="IMG_2677.jpg " alt="">
+                <img src="IMG_2690.jpg " alt="">
+                <img src="IMG_2692.jpg " alt="">
+                <img src="IMG_2772.jpg " alt="">
+                <img src="IMG_2773.jpg " alt="">
+                <img src="IMG_2798.jpg " alt="">
+                <img src="IMG_2861.jpg " alt="">
+                <img src="IMG_2865.jpg " alt="">
+                <img src="IMG_2868.jpg " alt="">
+                <img src="IMG_2882.jpg " alt="">
+                <img src="IMG_2936.jpg " alt="">
+                <img src="IMG_3096.jpg " alt="">
+                <img src="IMG_3111.jpg " alt="">
+                <img src="IMG_3232.jpg " alt="">
+                <img src="IMG_3266.jpg " alt="">
+                <img src="IMG_3330.jpg " alt="">
+                <img src="IMG_3362.jpg " alt="">
+                <img src="IMG_3363.jpg " alt="">
+                <img src="IMG_3513.jpg " alt="">
+                <img src="IMG_3596_2.jpg " alt="">
+                <img src="IMG_3813.jpg " alt="">
+                <img src="IMG_3844.jpg " alt="">
+                <img src="IMG_3994.jpg " alt="">
+                <img src="IMG_4077.jpg " alt="">
+                <img src="IMG_4577.jpg " alt="">
+                <img src="IMG_4771.jpg" alt="">
             </div>
         </div>
         <div class="spotify-container">
@@ -363,29 +423,43 @@
     });
 
     let currentPhotoIndex = 0;
-    const photoGallery = document.getElementById("photoGallery");
-    const photos = photoGallery.getElementsByTagName("img");
-    const totalPhotos = photos.length;
+const photoGallery = document.getElementById("photoGallery");
+const photos = photoGallery.getElementsByTagName("img");
+const totalPhotos = photos.length;
 
-    function showNextPhoto() {
-        // Hide all photos
-        for (let i = 0; i < totalPhotos; i++) {
-            photos[i].style.display = "none";
-        }
+// Create an array of indices
+let indices = Array.from({ length: totalPhotos }, (_, i) => i);
 
-        // Show the next photo
-        photos[currentPhotoIndex].style.display = "block";
-
-        // Increment index for next photo
-        currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
+// Shuffle the indices array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
+}
 
-    // Initially, hide all photos except the first one
-    for (let i = 1; i < totalPhotos; i++) {
+shuffle(indices);
+
+function showNextPhoto() {
+    // Hide all photos
+    for (let i = 0; i < totalPhotos; i++) {
         photos[i].style.display = "none";
     }
 
-    setInterval(showNextPhoto, 3000); // Change photo every 3 seconds
+    // Show the photo based on the shuffled indices array
+    photos[indices[currentPhotoIndex]].style.display = "block";
+
+    // Increment index for the next photo
+    currentPhotoIndex = (currentPhotoIndex + 1) % totalPhotos;
+}
+
+// Initially, hide all photos except the first one in the shuffled order
+for (let i = 0; i < totalPhotos; i++) {
+    photos[i].style.display = "none";
+}
+photos[indices[0]].style.display = "block"; // Show the first photo in the shuffled order
+
+setInterval(showNextPhoto, 3000); // Change photo every 3 seconds
 </script>
 
 
