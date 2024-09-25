@@ -445,12 +445,10 @@ nav a {
     flex: 1;
     margin: 0 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 800px;
-    /* Set a fixed height */
+    height: 1000px;
+    /* Double the height for the photography container */
     overflow: hidden;
-    /* Hide any content exceeding the container */
-    position: relative;
-    /* Ensure proper positioning */
+    /* Removed position: absolute to avoid the text being hidden behind the photos */
 }
 
 .photography-container img {
@@ -459,10 +457,30 @@ nav a {
     /* Ensure the image fills the container's height */
     object-fit: cover;
     /* Maintain aspect ratio while covering the container */
-    position: absolute;
-    top: 0;
-    left: 0;
 }
+
+/* New styles for video container */
+.video-container {
+    flex: 1;
+    margin: 0 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* No fixed height for the video container */
+}
+
+.video-container iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Hover effect for both containers */
+.photography-container:hover,
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+
 .spotify-container {
     flex: 0.6;
     /* Each container takes up equal space */
@@ -470,6 +488,7 @@ nav a {
     /* Add some spacing between the containers */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .spotify-container:hover {
     transform: translateY(-5px);
